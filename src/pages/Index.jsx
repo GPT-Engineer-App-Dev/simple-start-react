@@ -1,18 +1,27 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Text, VStack, Box, Flex, Spacer, Button, IconButton } from "@chakra-ui/react";
+import { FaBars } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.xl" p={0}>
+      <Flex as="nav" bg="blue.500" color="white" p={4} align="center">
+        <Text fontSize="xl" fontWeight="bold">MyApp</Text>
+        <Spacer />
+        <Box display={{ base: "none", md: "block" }}>
+          <Button variant="ghost" colorScheme="whiteAlpha" mr={4}>Home</Button>
+          <Button variant="ghost" colorScheme="whiteAlpha" mr={4}>About</Button>
+          <Button variant="ghost" colorScheme="whiteAlpha">Contact</Button>
+        </Box>
+        <Box display={{ base: "block", md: "none" }}>
+          <IconButton aria-label="Menu" icon={<FaBars />} />
+        </Box>
+      </Flex>
+      <Container centerContent maxW="container.md" height="80vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <VStack spacing={4}>
+          <Text fontSize="2xl">Welcome to MyApp</Text>
+          <Text>This is a basic structure of a React app with a responsive navigation bar.</Text>
+        </VStack>
+      </Container>
     </Container>
   );
 };
